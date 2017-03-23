@@ -1,0 +1,8 @@
+.fixedPos{
+    position: fixed;
+}
+
+table thead{
+    background:	#DCDCDC;
+    opacity: 0.7;
+}

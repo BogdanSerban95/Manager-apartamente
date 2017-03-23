@@ -1,0 +1,24 @@
+<div class="col-md-8">
+  <h3>Apartamentele mele</h3>
+  <table class="table table-stripped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Denumire</th>
+        <th>Numar Camere</th>
+        <th>Pret</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let apartament of apartamente;
+      let i=index" [attr.data-index]="i" (click)="onApartamentClick(i)">
+        <td>Apartament {{i+1}}</td>
+        <td>{{apartament.nr_camere}}</td>
+        <td>{{apartament.pret}} <strong>lei</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="col-md-1"></div>
+<div class="col-md-3" colspan=2>
+  <app-adaugare-apartament class="fixedPos" (onApartamentAdded)="onApartamentAdded($event)"></app-adaugare-apartament>
+</div>

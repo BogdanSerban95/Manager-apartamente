@@ -1,0 +1,45 @@
+<h3>{{titlu}}</h3>
+<form (ngSubmit)="addApartament(apartament)">
+  <table class="full_width">
+    <tr>
+      <td>
+        <md-input-container class="full_width">
+          <input mdInput type="number" placeholder="Numar Camere" [(ngModel)]="apartament.nr_camere" name="nr_cam" required min="1">
+        </md-input-container>
+      </td>
+
+    </tr>
+    <tr>
+      <td>
+        <md-input-container class="full_width">
+          <input mdInput type="number" placeholder="Numar Bai" [(ngModel)]="apartament.nr_bai" name="nr_bai" min="0" required>
+        </md-input-container>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <md-input-container class="full_width">
+          <input mdInput [md-tooltip]="suprafataInvalida ? 'Valoare invalida!': null" [style.color]="valideaza(suprafataInvalida)"
+            placeholder="Suprafata (mp)" [(ngModel)]="apartament.suprafata" name="supr" required>
+        </md-input-container>
+      </td>
+
+    </tr>
+    <tr>
+      <td>
+        <md-input-container class="full_width">
+          <input mdInput [md-tooltip]="pretInvalid ? 'Pret invalid!' : null" [style.color]="valideaza(pretInvalid)" placeholder="Pret (lei)"
+            [(ngModel)]="apartament.pret" name="pret" required>
+        </md-input-container>
+      </td>
+    </tr>
+  </table>
+  <md-input-container class="full_width">
+    <input mdInput placeholder="Adresa" [(ngModel)]="apartament.adresa" required name="adr">
+  </md-input-container>
+  <button md-raised-button class="full_width" type="submit">{{textButon}}</button>
+
+
+
+
+</form>

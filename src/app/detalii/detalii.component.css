@@ -1,0 +1,6 @@
+.big-row{
+    height: 50px;
+}
+tr:nth-child(odd){
+    font-weight: bold;
+}

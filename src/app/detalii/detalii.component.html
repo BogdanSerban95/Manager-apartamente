@@ -1,0 +1,35 @@
+<div class="col-md-7">
+  <h2>Apartament {{id+1}} - detalii</h2>
+  <table class="table table-striped" style="width: 60%">
+    <tr>
+      <td colspan="2">Adresa</td>
+    </tr>
+    <tr>
+      <td colspan="2">{{apartament.adresa}}</td>
+    </tr>
+    <tr>
+      <td>Numar Camere</td>
+      <td>Numar Bai</td>
+    </tr>
+    <tr>
+      <td>{{apartament.nr_camere}}</td>
+      <td>{{apartament.nr_bai}}</td>
+    </tr>
+    <tr>
+      <td>Suprafata</td>
+      <td>Pret</td>
+    </tr>
+
+    <tr>
+      <td>{{apartament.suprafata}} <strong>mp</strong></td>
+      <td>{{apartament.pret}} <strong>lei</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" (click)="edit()"><button md-button [disabled]="butonDezactivat" style="width: 100%">Edit</button></td>
+    </tr>
+  </table>
+</div>
+<div class="col-md-2" *ngIf="editApartament">
+  <app-adaugare-apartament (onApartamentEditat)="onApartamentEditat($event)" [apartamentEdit]="apartament" [id]="id"></app-adaugare-apartament>
+</div>
+<div class="col-md-2"></div>
